@@ -19,14 +19,16 @@ class BaseModel:
         **kwargs: dictionary
         """
         dateform = "%Y-%m-%dT%H:%M:%S.%f"
+        self.id = str(uuid4())                                             #unique id representation to each BaseModel in a string type
+        self.created_at = datetime.today()                              #date when instance is created
+        self.updated_at = datetime.today()                                 #date when instance is created and updated everytime we change an object
+
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":             #gonna create a datetime object
                     date = datetime.strptime(value, dateform)
-        else:
-            self.id = str(uuid4())                                             #unique id representation to each BaseModel in a string type
-            self.created_at = datetime.today()                              #date when instance is created
-
+                if key != "__class__":
+                    setattr(self, key, value)
 
     def save(self):
         """

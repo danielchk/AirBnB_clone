@@ -15,5 +15,9 @@ class FileStorage:
         return FileStorage.__objects
     
     def new(self, obj):
+        """storage to new with __objects __class__ __name__ and id"""
         obnew = obj.__class__.__name__
         obj = FileStorage.__objects["{}.{}".format(obnew.id)]
+    
+    def save(self):
+        

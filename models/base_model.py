@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import models
 from uuid import uuid4                                                   #used to create a unique id every time
-from datetime import date
 from datetime import datetime
 
 """
@@ -30,7 +29,7 @@ class BaseModel:
                 if key != "__class__":
                     setattr(self, key, value)
         else:
-            models.storage.new()
+            models.storage.new(self)
 
     def save(self):
         """

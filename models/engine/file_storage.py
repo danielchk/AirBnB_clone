@@ -12,21 +12,22 @@ class FileStorage:
     
     def all(self):
         """return dictionary objects"""
-        return FileStorage.__objects
+        return self.__objects
     
     def new(self, obj):
         """storage to new with __objects __class__ __name__ and id"""
-        obnew = obj.__class__.__name__
-        obj = FileStorage.__objects["{}.{}".format(obnew.id)]
+        key = "{}.{}".format(obj.__class__.__name__, obj.id)
+        self.__objects[key] = obj
     
     def save(self):
         """serialize objectsto the JSON file"""
-        with open(self.__class__.__file_path) as f:
-            dictobjs = {}
-            for key, value in self.__class__.__objects.items():
-                dictobjs[key] = value.to_dict()
-            f.write(json.dumps(dictobjs))
-    
+        with open(self.__file_path, encoding="UTF8", mode='w') as file:
+            json.dump(slef.__objects, file)
+
     def reload(self):
         """convert Json to object"""
-        
+        try:
+            with open(self.__file_path, encoding="UTF8", mode='r') as file:
+                self.__objects = json.loads(file)
+        except FileNotFoundError:
+            pass

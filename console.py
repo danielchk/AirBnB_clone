@@ -4,6 +4,12 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from datetime import datetime
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
@@ -11,7 +17,7 @@ class HBNBCommand(cmd.Cmd):
     """
     prompt = "(hbnb) "
     all_classes = {"BaseModel", "State", "City",
-                "Amenity", "Place", "Review"}
+                "Amenity", "Place", "Review", "User"}
 
     def emptyline(self):
         """Ignores empty spaces"""
@@ -84,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
         my_list = []
         if not line:
             for key in objects:
-                my_list.append(objects[key])
+                my_list.append(str(objects[key]))
             print(my_list)
             return
         try:
@@ -94,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
             for key in objects:
                 name = key.split('.')
                 if name[0] == args[0]:
-                    my_list.append(objects[key])
+                    my_list.append(str(objects[key]))
             print(my_list)
         except NameError:
             print("** class doesn't exist **")

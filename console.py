@@ -16,8 +16,8 @@ class HBNBCommand(cmd.Cmd):
     """this class is entry point of the command interpreter
     """
     prompt = "(hbnb) "
-    all_classes = {"BaseModel", "State", "City",
-                "Amenity", "Place", "Review", "User"}
+    all_classes = {"BaseModel", "State", "City", "Amenity",
+                   "Place", "Review", "User"}
 
     def emptyline(self):
         """Ignores empty spaces"""
@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         except NameError:
             print("** class doesn't exist **")
-    
+
     def do_show(self, line):
         """Prints the string representation of an instance
         Exceptions:
@@ -79,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         except KeyError:
             print("** no instance found **")
-    
+
     def do_all(self, line):
         """
         Prints all string representation of all instances
@@ -118,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
         try:
             if not line:
                 raise SyntaxError()
-            my_list = split(line, " ")
+            my_list = line.split(" ")
             if my_list[0] not in self.all_classes:
                 raise NameError()
             if len(my_list) < 2:
@@ -149,7 +149,7 @@ class HBNBCommand(cmd.Cmd):
             print("** attribute name missing **")
         except ValueError:
             print("** value missing **")
-    
+
     def do_destroy(self, line):
         """Deletes an instance based on the class name and id
         Exceptions:

@@ -1,30 +1,31 @@
 #!/usr/bin/python3
 import models
-from uuid import uuid4                                                   #used to create a unique id every time
+from uuid import uuid4
 from datetime import datetime
 
 """
 Base class to models
 """
 
+
 class BaseModel:
     """
     Base model instantiation
     """
-    
+
     def __init__(self, *args, **kwargs):
         """
         Args:
         **kwargs: dictionary
         """
         dateform = "%Y-%m-%dT%H:%M:%S.%f"
-        self.id = str(uuid4())                                             #unique id representation to each BaseModel in a string type
-        self.created_at = datetime.today()                              #date when instance is created
-        self.updated_at = datetime.today()                                 #date when instance is created and updated everytime we change an object
+        self.id = str(uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
 
         if kwargs:
             for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":             #gonna create a datetime object
+                if key == "created_at" or key == "updated_at":
                         value = datetime.strptime(value, dateform)
                 if key != "__class__":
                     setattr(self, key, value)
@@ -35,9 +36,9 @@ class BaseModel:
         """
         Save command that update updated_at
         """
-        self.updated_at = datetime.today()                                 #date when instance is created and updated everytime we change an object
+        self.updated_at = datetime.today()
         models.storage.save()
-               
+
     def __str__(self):
         """returns a string
         Return:
@@ -45,7 +46,7 @@ class BaseModel:
         """
         return "[{}] ({}) {}".format(
             type(self).__name__, self.id, self.__dict__)
-    
+
     def to_dict(self):
         """creates dictionary of the class  and returns
         Return:

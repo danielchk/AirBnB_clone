@@ -30,7 +30,7 @@ class BaseModel:
                 if key != "__class__":
                     setattr(self, key, value)
         else:
-            models.storage.save()
+            models.storage.new()
 
     def save(self):
         """

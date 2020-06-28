@@ -12,19 +12,20 @@ from models.place import Place
 from models.review import Review
 from models.user import User
 
+
 class FileStorage:
     __file_path = "file.json"
     __objects = {}
-    
+
     def all(self):
         """return dictionary objects"""
         return self.__objects
-    
+
     def new(self, obj):
         """storage to new with __objects __class__ __name__ and id"""
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         self.__objects[key] = obj
-    
+
     def save(self):
         """serialize objectsto the JSON file"""
         my_dict = {}

@@ -1,1 +1,3 @@
-# AirBnB_clone
+<p align="center">
+  <img src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20200626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200626T182139Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=1c612318a408b64c21993a69d6a475287e31ca17ff2e45a6fa1f694dce7dc4c1" width="350" title="hover text">
+</p>

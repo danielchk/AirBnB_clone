@@ -1,9 +1,13 @@
 #!/usr/bin/python3
 """
 Unitests to amenity.py
-""""
+"""
+
 import unittests
 import models
+import os
+from models.amenity import Amenity
+from models.base_model import BaseModel
 
 class amenity_tests1(unittests.TestCase):
     """Assert tests"""
@@ -27,3 +31,5 @@ class amenity_tests1(unittests.TestCase):
         inst = Amenity()
         self.assertTrue(hasattr(inst, "name"))
         self.assertIsEqual(inst.name, "")
+    
+    

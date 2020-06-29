@@ -183,7 +183,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def count(self, line):
-        """count the number of instances of a class
+        """
+            count the number of instances of a class
         """
         counter = 0
         try:
@@ -198,6 +199,13 @@ class HBNBCommand(cmd.Cmd):
             print(counter)
         except NameError:
             print("** class doesn't exist **")
+    
+    def limpiar(self, className, str):
+        """
+            extrae lo que hay dentro del parentesis
+        """
+        ListPart1 = str.split('"')
+        return className + " " + ListPart1[1]
 
     def default(self, line):
         """retrieve all instances of a class and
@@ -210,7 +218,9 @@ class HBNBCommand(cmd.Cmd):
             elif my_list[1] == "count()":
                 self.count(my_list[0])
             elif my_list[1][:4] == "show":
-                self.do_show(my_list[0])
+                self.do_show(self.limpiar(my_list[0], my_list[1]))
+            elif my_list[1][:7] == "destroy":
+                self.do_destroy(self.limpiar(my_list[0], my_list[1]))
         else:
             cmd.Cmd.default(self, line)
 if __name__ == '__main__':

@@ -24,11 +24,17 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        """return dictionary objects"""
+        """returns a dictionary
+        Return:
+            returns a dictionary of __object
+        """
         return self.__objects
 
     def new(self, obj):
-        """storage to new with __objects __class__ __name__ and id"""
+        """sets __object to given obj
+        Args:
+            obj: given object
+        """
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         self.__objects[key] = obj
 

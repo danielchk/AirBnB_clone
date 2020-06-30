@@ -212,8 +212,13 @@ class HBNBCommand(cmd.Cmd):
         New_list.append(aux_id[1])
         if len(ListPart1) > 1:
             for i in range(1, len(ListPart1)):
-                aux = ListPart1[i].split('"')
-                New_list.append(aux[1])
+                try:
+                    aux = ListPart1[i].split('"')
+                    New_list.append(aux[1])
+                except Exception:
+                    aux = ListPart1[i].split(' ')
+                    aux = aux[1].split(')')
+                    New_list.append(aux[0])
         return " ".join(i for i in New_list)
 
     def default(self, line):

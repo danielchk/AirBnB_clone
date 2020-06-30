@@ -48,6 +48,7 @@ class FileStorage:
 
     def reload(self):
         """serialize the file path to JSON file path
+        Exceptions:
         """
         try:
             with open(self.__file_path, 'r', encoding="UTF-8") as file:

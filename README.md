@@ -6,21 +6,27 @@
 
 _This project contains a console that can interpret various commands that will be explained here._
 
-## Comenzando 🚀
+## Content of the project 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+This is the beginning of the creation of a AirBnB clone app. In the next months this repository will gonna update the code to finish all the backend and frontend; in this currently project we have a functionally console that can interpret commands, store information and reload that same information from any class instances that is stored in an a JSON file.
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+### Commands of the console 📋
 
-
-### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
-
+The console can be used interactively or non-interactively. If you want to use it in the non-interactively form you need to echo the command and add a pipe before the command ./console.py 
 ```
-Da un ejemplo
+$echo "all" | ./console.py
+(hbnb) all
+[]
 ```
-
+But if you want to run it interactively(that's what we recommend) you need to run the console with the command ./console.py and use one of the next commands
+*Quit -> _quit the console_
+```
+(hbnb) quit
+```
+*EOF -> _quit the console_(ctr-d)
+```
+(hbnb) EOF
+```
 ### Instalación 🔧
 
 _Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_

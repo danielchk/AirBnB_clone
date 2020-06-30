@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-import models
-from uuid import uuid4
-from datetime import datetime
-
 """
 Base class to models
 """
+import models
+from uuid import uuid4
+from datetime import datetime
 
 
 class BaseModel:

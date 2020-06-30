@@ -183,7 +183,7 @@ class HBNBCommand(cmd.Cmd):
         except KeyError:
             print("** no instance found **")
 
-    def count(self, line):
+    def do_count(self, line):
         """
             count the number of instances of a class
         """

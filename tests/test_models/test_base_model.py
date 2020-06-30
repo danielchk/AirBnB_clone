@@ -64,11 +64,13 @@ class TestBaseModel(unittest.TestCase):
 
     def test_str(self):
         """Test __str___"""
+        date1 = datetime.today()
         tester1 = BaseModel()
         tester1.id = 821983719274
-        tester1.created_at = datetime.today()
-        tester1.updated_at = datetime.today()
+        tester1.created_at = date1
+        tester1.updated_at = date1
         testerstr = tester1.__str__()
         self.assertIn("[BaseModel] (821983719274)", testerstr)
         self.assertIn("'id': 821983719274", testerstr)
-        self.assertIn("'created_at':" + repr(datetime.today()), testerstr)
+        self.assertIn("'created_at': " + repr(date1), testerstr)
+        self.assertIn("'updated_at': " + repr(date1), testerstr)

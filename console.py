@@ -200,7 +200,7 @@ class HBNBCommand(cmd.Cmd):
             print(counter)
         except NameError:
             print("** class doesn't exist **")
-    
+
     def limpiar(self, className, str):
         """
             extrae lo que hay dentro del parentesis

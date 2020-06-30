@@ -2,6 +2,8 @@
 """
 Test to file_storage
 """
+import pep8
+import os
 import models
 import unittest
 from datetime import datetime
@@ -91,7 +93,3 @@ class TestFileStorage(unittest.TestCase):
             for line in r:
                 self.assertEqual(line, "{}")
         self.assertIs(self.storage.reload(), None)
-
-
-if __name__ == "__main__":
-    unittest.main()

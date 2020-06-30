@@ -56,4 +56,4 @@ class FileStorage:
                     value = eval(value["__class__"])(**value)
                     self.__objects[key] = value
         except FileNotFoundError:
-            pass
+            return

@@ -205,8 +205,16 @@ class HBNBCommand(cmd.Cmd):
         """
             extrae lo que hay dentro del parentesis
         """
-        ListPart1 = str.split('"')
-        return className + " " + ListPart1[1]
+        ListPart1 = str.split(',')
+        New_list = []
+        aux_id = ListPart1[0].split('"')
+        New_list.append(className)
+        New_list.append(aux_id[1])
+        if len(ListPart1) > 1:
+            for i in range(1, len(ListPart1)):
+                aux = ListPart1[i].split('"')
+                New_list.append(aux[1])
+        return " ".join(i for i in New_list)
 
     def default(self, line):
         """retrieve all instances of a class and
@@ -222,6 +230,8 @@ class HBNBCommand(cmd.Cmd):
                 self.do_show(self.limpiar(my_list[0], my_list[1]))
             elif my_list[1][:7] == "destroy":
                 self.do_destroy(self.limpiar(my_list[0], my_list[1]))
+            elif my_list[1][:6] == "update":
+                self.do_update((self.limpiar(my_list[0], my_list[1])))
         else:
             cmd.Cmd.default(self, line)
 

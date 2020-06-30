@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
             objects = storage.all()
             key = my_list[0] + '.' + my_list[1]
             if key in objects:
-                tmp = object[key]
+                tmp = objects[key]
                 print(tmp)
             else:
                 raise KeyError()

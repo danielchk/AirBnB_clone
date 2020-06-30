@@ -9,9 +9,10 @@ import models
 from models.city import City
 from models.base_model import BaseModel
 
+
 class city_test1(unittest.TestCase):
     """Assert cases to City"""
-    
+
     def test_subclass(self):
         """City is a subclass"""
         inst = City()
@@ -25,7 +26,7 @@ class city_test1(unittest.TestCase):
         inst = City()
         out = "[City] ({}) {}".format(inst.id, inst.__dict__)
         self.assertEqual(out, str(inst))
-    
+
     def test_name(self):
         """test name exists in amenity instance"""
         inst = City()

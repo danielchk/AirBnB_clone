@@ -8,9 +8,10 @@ import models
 from models.place import Place
 from models.base_model import BaseModel
 
+
 class place_tests1(unittest.TestCase):
     """Assert tests"""
-    
+
     def test_subclass(self):
         """Place is a subclass"""
         inst = Place()
@@ -18,13 +19,13 @@ class place_tests1(unittest.TestCase):
         self.assertTrue(hasattr(inst, "id"))
         self.assertTrue(hasattr(inst, "created_at"))
         self.assertTrue(hasattr(inst, "updated_at"))
-    
+
     def test_output(self):
         """show if the output works"""
         inst = Place()
         out = "[Place] ({}) {}".format(inst.id, inst.__dict__)
         self.assertEqual(out, str(inst))
-    
+
     def test_name(self):
         """test name exists in Place instance"""
         inst = Place()

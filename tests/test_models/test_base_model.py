@@ -9,9 +9,10 @@ from models.base_model import BaseModel
 from datetime import datetime
 from time import sleep
 
+
 class TestBaseModel(unittest.TestCase):
     """Diferent cases to test BaseModel Class"""
-    
+
     def test_noargs(self):
         """basemodel exists without any arg"""
         self.assertEqual(BaseModel, type(BaseModel()))
@@ -32,7 +33,7 @@ class TestBaseModel(unittest.TestCase):
         """test id to_dict exist when we create a new instance(tester)"""
         tester = BaseModel()
         self.assertTrue(dict, type(tester.to_dict()))
-    
+
     def test_dict_content(self):
         """test if dict contain correct attributes"""
         tester = BaseModel()
@@ -44,8 +45,8 @@ class TestBaseModel(unittest.TestCase):
         """test if 2 instances have different ids attributes"""
         tester1 = BaseModel()
         tester2 = BaseModel()
-        self.assertNotEqual(tester1.id, tester2,id)
-    
+        self.assertNotEqual(tester1.id, tester2, id)
+
     def test_different_times(self):
         """test if created_at and updated_at are different in 2 instances"""
         tester1 = BaseModel()

@@ -8,9 +8,10 @@ import models
 from models.user import User
 from models.base_model import BaseModel
 
+
 class review_tests1(unittest.TestCase):
     """Assert tests"""
-    
+
     def test_subclass(self):
         """User is a subclass"""
         inst = User()
@@ -18,13 +19,13 @@ class review_tests1(unittest.TestCase):
         self.assertTrue(hasattr(inst, "id"))
         self.assertTrue(hasattr(inst, "created_at"))
         self.assertTrue(hasattr(inst, "updated_at"))
-    
+
     def test_output(self):
         """show if the output works"""
         inst = User()
         out = "[User] ({}) {}".format(inst.id, inst.__dict__)
         self.assertEqual(out, str(inst))
-    
+
     def test_name(self):
         """test parameters exists in User instance"""
         inst = User()

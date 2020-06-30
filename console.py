@@ -224,5 +224,7 @@ class HBNBCommand(cmd.Cmd):
                 self.do_destroy(self.limpiar(my_list[0], my_list[1]))
         else:
             cmd.Cmd.default(self, line)
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

@@ -64,3 +64,5 @@ cd13ab5b-60ec-42ce-96c1-c1c05af1a3aa
 (hbnb) count User
 2
 ```
+* **update** -> _Update a class instance key and value attribute of a given ID_
+```

@@ -3,6 +3,7 @@
 Tests fpor console
 """
 import unittest
+import console
 from console import HBNBCommand
 
 class testConsole(unittest.TestCase):

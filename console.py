@@ -226,11 +226,12 @@ class HBNBCommand(cmd.Cmd):
         retrieve the number of instances
         """
         my_list = line.split('.')
+        print(my_list[1])
         if len(my_list) >= 2:
             if my_list[1] == "all()":
                 self.do_all(my_list[0])
             elif my_list[1] == "count()":
-                self.count(my_list[0])
+                self.do_count(my_list[0])
             elif my_list[1][:4] == "show":
                 self.do_show(self.limpiar(my_list[0], my_list[1]))
             elif my_list[1][:7] == "destroy":

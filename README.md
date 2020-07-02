@@ -66,3 +66,10 @@ cd13ab5b-60ec-42ce-96c1-c1c05af1a3aa
 ```
 * **update** -> _Update a class instance key and value attribute of a given ID_
 ```
+(hbnb) update User 6f348019-0499-420f-8eec-ef0fdc863c02 first_name "Holberton"
+(hbnb) show User 6f348019-0499-420f-8eec-ef0fdc863c02
+[User] (6f348019-0499-420f-8eec-ef0fdc863c02) {'created_at': datetime.datetime(
+2019, 2, 17, 21, 54, 39, 234382), 'first_name': 'Holberton', 'updated_at': date
+time.datetime(2019, 2, 17, 21, 54, 39, 234382), 'id': '6f348019-0499-420f-8eec-
+ef0fdc863c02'}
+```
